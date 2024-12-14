@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/factory/IChatRoomFactory.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/models/Message.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/models/Participant.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/exceptions/ChatRoomCreationException.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/Main.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/models/User.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/factory/UserFactory.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/services/ChatRoomService.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/services/MessageService.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/config/DatabaseConnection.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/models/PrivateChatRoom.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/models/IChatRoom.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/repository/ChatRoomRepository.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/factory/ChatRoomFactory.java</file>
+            <file>file:/Z:/model/Selected_Labs/src/selected_labs/models/PublicChatRoom.java</file>
+        </group>
+    </open-files>
+</project-private>

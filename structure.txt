@@ -1,0 +1,73 @@
+src/selected_labs/
+├── config/
+│   ├── DatabaseConfig.java
+│   └── DatabaseConnection.java
+├── exceptions/
+│   └── ChatRoomCreationException.java
+├── factory/
+│   ├── IChatRoomFactory.java
+│   ├── ChatRoomFactory.java
+│   └── UserFactory.java
+├── models/
+│   ├── chat/
+│   │   ├── IChatRoom.java
+│   │   ├── PublicChatRoom.java
+│   │   └── PrivateChatRoom.java
+│   ├── Message.java
+│   ├── Participant.java
+│   └── User.java
+├── repository/
+│   ├── Repository.java
+│   ├── ChatRoomRepository.java
+│   └── UserRepository.java
+├── services/
+│   ├── ChatRoomService.java
+│   ├── MessageService.java
+│   └── UserService.java
+└── Main.java
+
+
+Database schema:
+
+-- إنشاء قاعدة البيانات
+CREATE DATABASE chatapp;
+USE chatapp;
+
+-- جدول المستخدمين
+CREATE TABLE users (
+    username VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(255) NOT NULL,
+    is_admin BOOLEAN DEFAULT FALSE
+);
+
+-- جدول غرف الدردشة
+CREATE TABLE chat_rooms (
+    room_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    type ENUM('PUBLIC', 'PRIVATE') NOT NULL,
+    owner_username VARCHAR(50),
+    max_participants INT DEFAULT 100,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (owner_username) REFERENCES users(username)
+);
+
+-- جدول الرسائل
+CREATE TABLE messages (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    room_id INT,
+    sender_username VARCHAR(50),
+    content TEXT NOT NULL,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (room_id) REFERENCES chat_rooms(room_id),
+    FOREIGN KEY (sender_username) REFERENCES users(username)
+);
+
+-- جدول المشاركين
+CREATE TABLE participants (
+    room_id INT,
+    username VARCHAR(50),
+    joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (room_id, username),
+    FOREIGN KEY (room_id) REFERENCES chat_rooms(room_id),
+    FOREIGN KEY (username) REFERENCES users(username)
+);
